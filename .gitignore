@@ -5,6 +5,9 @@
 /tmp
 /out-tsc
 
+#secrets
+azure_rsa
+azure_rsa.pub
 # dependencies
 node_modules
 
