@@ -32,13 +32,13 @@ steps:
     provider: 'aws'
     command: 'validate'
     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/05-ec2-instances'
-- task: TerraformTaskV3@3
-  displayName: Terraform apply
-  inputs:
-    provider: 'aws'
-    command: 'apply'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/05-ec2-instances'
-    environmentServiceNameAWS: 'aws-for-terraform'
+# - task: TerraformTaskV3@3
+#   displayName: Terraform apply
+#   inputs:
+#     provider: 'aws'
+#     command: 'apply'
+#     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/05-ec2-instances'
+#     environmentServiceNameAWS: 'aws-for-terraform'
 
 - task: TerraformTaskV3@3
   inputs:
@@ -46,19 +46,5 @@ steps:
     command: 'destroy'
     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/05-ec2-instances'
     environmentServiceNameAWS: 'aws-for-terraform'
-# - task: TerraformTaskV1@0
-#   inputs:
-#     provider: 'aws'
-#     command: 'init'
-#     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/05-ec2-instances'
-#     commandOptions: '-reconfigure'
-#     backendServiceAWS: 'aws-for-terraform'
-#     backendAWSBucketName: 'terraform-backend-state-prejkit-123'
-#     backendAWSKey: 'aws-dev.tfstate'
-# - task: TerraformTaskV1@0
-#   inputs:
-#     provider: 'aws'
-#     command: 'apply'
-#     workingDirectory: '$(System.DefaultWorkingDirectory$/terraform/05-ec2-instances'
-#     environmentServiceNameAWS: 'aws-for-terraform'
+
 
