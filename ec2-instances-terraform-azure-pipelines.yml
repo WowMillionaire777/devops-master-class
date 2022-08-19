@@ -40,6 +40,12 @@ steps:
     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/05-ec2-instances'
     environmentServiceNameAWS: 'aws-for-terraform'
 
+- task: TerraformTaskV3@3
+  inputs:
+    provider: 'aws'
+    command: 'destroy'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/05-ec2-instances'
+    environmentServiceNameAWS: 'aws-for-terraform'
 # - task: TerraformTaskV1@0
 #   inputs:
 #     provider: 'aws'
