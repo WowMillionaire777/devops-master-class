@@ -13,12 +13,12 @@ steps:
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/'
     backendServiceAWS: 'aws-for-terraform'
-    backendAWSBucketName: 'terraform-backend-state-in28minutes-123'
-    backendAWSKey: 'kubernetes-dev.tfstate'
+    backendAWSBucketName: 'terraform-backend-state-prejkit-123'
+    backendAWSKey: 'aws-dev.tfstate'
 - task: TerraformTaskV1@0
   inputs:
     provider: 'aws'
     command: 'apply'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/'
+    workingDirectory: '$(System.DefaultWorkingDirectory$(System.DefaultWorkingDirectory)/devops-master-class/terraform/05-ec2-instances'
     environmentServiceNameAWS: 'aws-for-terraform'
 
