@@ -15,19 +15,37 @@ steps:
   inputs:
     targetType: inline
     script: ls -R $(System.DefaultWorkingDirectory)
-- task: TerraformTaskV1@0
+    
+- task: TerraformTaskV3@3
+  displayName: Terraform init
   inputs:
     provider: 'aws'
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/05-ec2-instances'
-    commandOptions: '-reconfigure'
     backendServiceAWS: 'aws-for-terraform'
     backendAWSBucketName: 'terraform-backend-state-prejkit-123'
-    backendAWSKey: 'aws-dev.tfstate'
-- task: TerraformTaskV1@0
+    backendAWSKey: 'aws-dev.tfstate'   
+- task: TerraformTaskV3@3
+  displayName: Terraform apply
   inputs:
     provider: 'aws'
     command: 'apply'
-    workingDirectory: '$(System.DefaultWorkingDirectory$/terraform/05-ec2-instances'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/05-ec2-instances'
     environmentServiceNameAWS: 'aws-for-terraform'
+
+# - task: TerraformTaskV1@0
+#   inputs:
+#     provider: 'aws'
+#     command: 'init'
+#     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/05-ec2-instances'
+#     commandOptions: '-reconfigure'
+#     backendServiceAWS: 'aws-for-terraform'
+#     backendAWSBucketName: 'terraform-backend-state-prejkit-123'
+#     backendAWSKey: 'aws-dev.tfstate'
+# - task: TerraformTaskV1@0
+#   inputs:
+#     provider: 'aws'
+#     command: 'apply'
+#     workingDirectory: '$(System.DefaultWorkingDirectory$/terraform/05-ec2-instances'
+#     environmentServiceNameAWS: 'aws-for-terraform'
 
