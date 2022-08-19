@@ -24,10 +24,10 @@ steps:
     backendServiceAWS: 'aws-for-terraform'
     backendAWSBucketName: 'terraform-backend-state-prejkit-123'
     backendAWSKey: 'aws-dev.tfstate'
-# - task: TerraformTaskV1@0
-#   inputs:
-#     provider: 'aws'
-#     command: 'apply'
-#     workingDirectory: '$(System.DefaultWorkingDirectory$(System.DefaultWorkingDirectory)/terraform/05-ec2-instances'
-#     environmentServiceNameAWS: 'aws-for-terraform'
+- task: TerraformTaskV1@0
+  inputs:
+    provider: 'aws'
+    command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory$(System.DefaultWorkingDirectory)/terraform/05-ec2-instances'
+    environmentServiceNameAWS: 'aws-for-terraform'
 
