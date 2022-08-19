@@ -25,6 +25,13 @@ steps:
     backendServiceAWS: 'aws-for-terraform'
     backendAWSBucketName: 'terraform-backend-state-prejkit-123'
     backendAWSKey: 'aws-dev.tfstate'   
+
+- task: TerraformTaskV3@3
+  displayName: Terraform validate
+  inputs:
+    provider: 'aws'
+    command: 'validate'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/05-ec2-instances'
 - task: TerraformTaskV3@3
   displayName: Terraform apply
   inputs:
