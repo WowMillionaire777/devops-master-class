@@ -7,19 +7,27 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-- task: TerraformTaskV1@0
+- task: Bash@3
   inputs:
-    provider: 'aws'
-    command: 'init'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/devops-master-class/terraform/05-ec2-instances'
-    commandOptions: '-reconfigure'
-    backendServiceAWS: 'aws-for-terraform'
-    backendAWSBucketName: 'terraform-backend-state-prejkit-123'
-    backendAWSKey: 'aws-dev.tfstate'
-- task: TerraformTaskV1@0
+    targetType: inline
+    script: echo System Default Working Directory is $(System.DefaultWorkingDirectory)
+- task: Bash@3
   inputs:
-    provider: 'aws'
-    command: 'apply'
-    workingDirectory: '$(System.DefaultWorkingDirectory$(System.DefaultWorkingDirectory)/devops-master-class/terraform/05-ec2-instances'
-    environmentServiceNameAWS: 'aws-for-terraform'
+    targetType: inline
+    script: ls -R $(System.DefaultWorkingDirectory)
+# - task: TerraformTaskV1@0
+#   inputs:
+#     provider: 'aws'
+#     command: 'init'
+#     workingDirectory: '$(System.DefaultWorkingDirectory)/devops-master-class/terraform/05-ec2-instances'
+#     commandOptions: '-reconfigure'
+#     backendServiceAWS: 'aws-for-terraform'
+#     backendAWSBucketName: 'terraform-backend-state-prejkit-123'
+#     backendAWSKey: 'aws-dev.tfstate'
+# - task: TerraformTaskV1@0
+#   inputs:
+#     provider: 'aws'
+#     command: 'apply'
+#     workingDirectory: '$(System.DefaultWorkingDirectory$(System.DefaultWorkingDirectory)/devops-master-class/terraform/05-ec2-instances'
+#     environmentServiceNameAWS: 'aws-for-terraform'
 
