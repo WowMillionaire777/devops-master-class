@@ -19,7 +19,7 @@ steps:
 #   inputs:
 #     provider: 'aws'
 #     command: 'init'
-#     workingDirectory: '$(System.DefaultWorkingDirectory)/devops-master-class/terraform/05-ec2-instances'
+#     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/05-ec2-instances'
 #     commandOptions: '-reconfigure'
 #     backendServiceAWS: 'aws-for-terraform'
 #     backendAWSBucketName: 'terraform-backend-state-prejkit-123'
@@ -28,6 +28,6 @@ steps:
 #   inputs:
 #     provider: 'aws'
 #     command: 'apply'
-#     workingDirectory: '$(System.DefaultWorkingDirectory$(System.DefaultWorkingDirectory)/devops-master-class/terraform/05-ec2-instances'
+#     workingDirectory: '$(System.DefaultWorkingDirectory$(System.DefaultWorkingDirectory)/terraform/05-ec2-instances'
 #     environmentServiceNameAWS: 'aws-for-terraform'
 
