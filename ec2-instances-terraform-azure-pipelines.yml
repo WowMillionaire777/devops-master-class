@@ -11,7 +11,7 @@ steps:
   inputs:
     provider: 'aws'
     command: 'init'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/devops-master-class/terraform/05-ec2-instances'
     backendServiceAWS: 'aws-for-terraform'
     backendAWSBucketName: 'terraform-backend-state-prejkit-123'
     backendAWSKey: 'aws-dev.tfstate'
